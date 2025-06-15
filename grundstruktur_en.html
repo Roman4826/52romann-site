@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer 52romann</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #1f0036, #32004f);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    .glass {
+      background: rgba(20, 0, 40, 0.7);
+      backdrop-filter: blur(12px);
+    }
+    .fade-in {
+      animation: fadeIn 1.5s ease-in-out forwards;
+      opacity: 0;
+    }
+    .slide-up {
+      animation: slideUp 1.2s ease-out forwards;
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    .hover-glow:hover {
+      box-shadow: 0 0 15px rgba(180, 0, 255, 0.6);
+      transition: all 0.3s ease;
+    }
+    .glow-text {
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #9d4edd, 0 0 20px #5a189a; }
+      to { text-shadow: 0 0 20px #e0aaff, 0 0 30px #c77dff; }
+    }
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: url('https://i.ibb.co/Vj6Fq0M/stars.png') repeat;
+      z-index: -1;
+      animation: moveStars 100s linear infinite;
+    }
+    @keyframes moveStars {
+      0% { background-position: 0 0; }
+      100% { background-position: -10000px 10000px; }
+    }
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #7e22ce;
+      color: white;
+      border-radius: 9999px;
+      padding: 0.75rem 1rem;
+      font-size: 1.25rem;
+      cursor: pointer;
+      display: none;
+      z-index: 999;
+    }
+    #backToTop:hover {
+      background-color: #a855f7;
+    }
+  </style>
+</head>
+<body class="text-white font-sans">
+  <div class="stars"></div>
+
+  <button id="backToTop" title="Go to top">↑</button>
+
+  <!-- Header -->
+  <header class="glass p-6 flex justify-between items-center shadow-lg fade-in">
+    <h1 class="text-3xl font-bold glow-text">Developer <span class="text-purple-400">52romann</span></h1>
+    <nav class="space-x-6 text-lg">
+      <a href="#about" class="hover:text-purple-300">About</a>
+      <a href="#projects" class="hover:text-purple-300">Projects</a>
+      <a href="#contact" class="hover:text-purple-300">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="glass text-center py-20 px-4 slide-up">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4 glow-text">Welcome to my developer site</h2>
+    <p class="text-lg text-purple-200 max-w-xl mx-auto">I'm a passionate Python developer focused on modern GUI tools, bots, and creative automation.</p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="glass py-16 px-6 md:px-20 fade-in">
+    <h3 class="text-3xl font-semibold mb-6 border-b border-purple-400 inline-block">About Me</h3>
+    <p class="text-purple-200 leading-relaxed max-w-3xl">I'm 52romann, a developer with a passion for modern tools and graphical interfaces. Whether it's a login GUI, email tool, or Discord bot – I bring ideas to life. My tools combine functionality with design.</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="glass py-16 px-6 md:px-20 fade-in">
+    <h3 class="text-3xl font-semibold mb-6 border-b border-purple-400 inline-block">Projects</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-gray-900 p-4 rounded-xl shadow hover:scale-105 transition hover-glow">
+        <img src="https://cdn.discordapp.com/attachments/1381593828464529481/1383831177743302887/image.png?ex=685038b7&is=684ee737&hm=e629cfde2baeeb70a68c011d9323b4d40133ed6244c71cf62a5680ecfa87c372&" alt="Modern Multitools" class="rounded mb-3">
+        <h4 class="text-xl font-bold text-purple-300">Modern Multitools</h4>
+        <p class="text-purple-200 text-sm">Login systems, email verification, SQLite, dark mode, and stylish GUI – all in one.</p>
+      </div>
+      <div class="bg-gray-900 p-4 rounded-xl shadow hover:scale-105 transition hover-glow">
+        <i class="fas fa-envelope-open-text text-green-400 text-3xl mb-2"></i>
+        <h4 class="text-xl font-bold text-purple-300">Email Spammer</h4>
+        <p class="text-purple-200 text-sm mb-2">Efficient tool for sending HTML emails with design, images, account switching & more.</p>
+        <video controls class="rounded w-full" controls muted volume="1.0" preload="metadata" style="max-height:600px;">
+          <source src="showcase_spammer.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+      <div class="bg-gray-900 p-4 rounded-xl shadow hover:scale-105 transition hover-glow">
+        <i class="fab fa-discord text-purple-400 text-3xl mb-2"></i>
+        <h4 class="text-xl font-bold text-purple-300">Discord Bots</h4>
+        <p class="text-purple-200 text-sm">Ticket bots, role management, UI interactions – everything automated for your community.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="glass py-16 px-6 md:px-20 slide-up">
+    <h3 class="text-3xl font-semibold mb-6 border-b border-purple-400 inline-block">Contact</h3>
+    <p class="text-purple-200 mb-4">Want a custom tool? Reach out directly:</p>
+    <form class="grid gap-4 max-w-xl">
+      <input type="text" placeholder="Your name" class="p-2 rounded bg-gray-800 text-white">
+      <input type="email" placeholder="Email address" class="p-2 rounded bg-gray-800 text-white">
+      <textarea placeholder="Message..." class="p-2 rounded bg-gray-800 text-white"></textarea>
+      <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded transition-transform transform hover:scale-105">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="glass text-center p-6 text-sm text-purple-300 fade-in">
+    &copy; 2025 Developer 52romann. All rights reserved.
+  </footer>
+
+  <audio id="scrollSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6987d7b260.mp3?filename=click-124467.mp3"></audio>
+
+  <script>
+    const backToTop = document.getElementById("backToTop");
+    const scrollSound = document.getElementById("scrollSound");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      scrollSound.currentTime = 0;
+      scrollSound.play();
+    });
+
+    // Optional: Play scroll sound when user scrolls down
+    let lastScroll = 0;
+    window.addEventListener("scroll", () => {
+      let currentScroll = window.scrollY;
+      if (Math.abs(currentScroll - lastScroll) > 150) {
+        scrollSound.currentTime = 0;
+        scrollSound.play();
+        lastScroll = currentScroll;
+      }
+    });
+  </script>
+</body>
+</html>
