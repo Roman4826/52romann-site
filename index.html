@@ -83,9 +83,11 @@
       <span class="text-2xl font-bold glow-text">52romann</span>
     </h1>
     <nav class="space-x-6 text-lg">
+      <span class="text-green-400 font-bold animate-pulse">GE</span>
       <a href="#about" class="hover:text-purple-300">About</a>
       <a href="#projects" class="hover:text-purple-300">Projects</a>
       <a href="#contact" class="hover:text-purple-300">Contact</a>
+      <a href="#greeneye" class="hover:text-green-400 font-semibold animate-pulse text-green-300">Green Eye Multitool</a>
     </nav>
   </header>
 
@@ -94,6 +96,54 @@
     <h2 class="text-4xl md:text-5xl font-bold mb-4 glow-text">Welcome to my developer site</h2>
     <p class="text-lg text-purple-200 max-w-xl mx-auto">I'm a passionate Python developer focused on modern GUI tools, bots, and creative automation.</p>
   </section>
+
+  <!-- Green Eye Numbers Section -->
+  <section id="greeneye" class="glass py-16 px-6 md:px-20 slide-up hidden">
+    <h3 class="text-3xl font-semibold mb-6 border-b border-purple-400 inline-block animate-pulse text-green-400">Green Eye Multitool</h3>
+    <p class="text-purple-200 mb-4">This section showcases various tools developed and combined into one multitool by 52romann.</p>
+    <img src="https://cdn.discordapp.com/attachments/1381593828464529481/1383919332748165130/image.png?ex=68508ad0&is=684f3950&hm=76669869a77ba2889c287f694f6d2f5e6362beabd004177a68f6040dc2ec012d&" alt="Green Eye Image" class="rounded mb-6 max-w-full h-auto">
+    <div class="grid grid-cols-2 gap-x-12 text-purple-200">
+      <ol class="list-decimal list-inside space-y-1">
+        <li>Go to Start Menu</li>
+        <li>IP Lookup</li>
+        <li>IP Find</li>
+        <li>Discord Nitro Generator</li>
+        <li>Netflix Account Generator</li>
+        <li>Discord Account Deleter Bot</li>
+        <li>PC Grabber</li>
+      </ol>
+      <ol start="8" class="list-decimal list-inside space-y-1">
+        <li>Email Spammer</li>
+        <li>Discord Webhook Spammer</li>
+        <li>Code to EXE</li>
+        <li>DDOS</li>
+        <li>Website DDOS</li>
+        <li>Bitcoin Miner</li>
+        <li>YouTube Downloader</li>
+      </ol>
+    </div>
+  </section>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const greenEyeSection = document.getElementById("greeneye");
+  const navLinks = document.querySelectorAll('nav a');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href').substring(1);
+
+      if (targetId === "greeneye") {
+        e.preventDefault();
+        greenEyeSection.classList.remove("hidden");
+        greenEyeSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        greenEyeSection.classList.add("hidden");
+      }
+    });
+  });
+});
+</script>
 
   <!-- About Section -->
   <section id="about" class="glass py-16 px-6 md:px-20 fade-in">
@@ -174,5 +224,26 @@
       }
     });
   </script>
+
+<div id="greeneye-popup" class="fixed top-10 left-[-400px] bg-green-600 text-white px-6 py-4 rounded-xl shadow-xl hidden z-50" style="transition: transform 5s ease-in-out, left 5s ease-in-out;">
+  <strong>🔥 NEWEST MULTITOOL</strong><br>
+  Test the <span class="font-bold">Green Eye Multitool</span> now! 🧪
+</div>
+
+<script>
+  const greenEyePopup = document.getElementById("greeneye-popup");
+  let popupShown = false;
+
+  window.addEventListener("scroll", () => {
+    if (!popupShown && window.scrollY > 150) {
+      greenEyePopup.classList.remove("hidden");
+      greenEyePopup.style.left = '100vw';
+      popupShown = true;
+      setTimeout(() => {
+        greenEyePopup.style.left = '-400px';
+      }, 5000);
+    }
+  });
+</script>
 </body>
 </html>
