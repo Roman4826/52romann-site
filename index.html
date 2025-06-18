@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Developer 52romann</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="icon" type="image/png" href="logo.png"/>
   <style>
     body {
       background: linear-gradient(to right, #1f0036, #32004f);
@@ -33,11 +33,20 @@
     .glow-text {
       animation: glow 2s ease-in-out infinite alternate;
     }
+    .blue-glow-text {
+      animation: blueglow 2s ease-in-out infinite alternate;
+      color: #60a5fa;
+      font-weight: bold;
+    }
     @keyframes fadeIn { to { opacity: 1; } }
     @keyframes slideUp { to { transform: translateY(0); opacity: 1; } }
     @keyframes glow {
       from { text-shadow: 0 0 10px #9d4edd, 0 0 20px #5a189a; }
       to { text-shadow: 0 0 20px #e0aaff, 0 0 30px #c77dff; }
+    }
+    @keyframes blueglow {
+      from { text-shadow: 0 0 10px #3b82f6, 0 0 20px #1e3a8a; }
+      to { text-shadow: 0 0 20px #93c5fd, 0 0 30px #60a5fa; }
     }
     .stars {
       position: fixed;
@@ -78,9 +87,10 @@
 
   <!-- Header -->
   <header class="glass p-6 flex justify-between items-center shadow-lg fade-in">
-    <h1 class="flex items-center space-x-3">
+    <h1 class="flex items-center space-x-4">
       <img src="logo.png" alt="52romann Logo" class="h-12 rounded shadow-lg">
       <span class="text-2xl font-bold glow-text">52romann</span>
+      <span class="blue-glow-text text-lg">IP VANISH</span>
     </h1>
     <nav class="space-x-6 text-lg">
       <span class="text-green-400 font-bold animate-pulse">GE</span>
@@ -92,47 +102,46 @@
   </header>
 
   <!-- IP VANISH TOOL SECTION -->
-<section id="ipvanish" class="glass py-16 px-6 md:px-20 slide-up">
-  <h3 class="text-3xl font-bold mb-6 text-blue-400 border-b border-blue-600">IP Vanish Tool - User Manual</h3>
-  <img src="https://cdn.discordapp.com/attachments/1075105765842493611/1384938349537792000/image.png?ex=68543fd9&is=6852ee59&hm=584fdde8841d03ced5cc9ec9bb87d1b1a21e01c21c1fd87a4937673077b31e1d&" alt="IP Tool Illustration" class="rounded-xl mb-6 shadow-lg max-w-full h-auto">
-
-  <div class="space-y-6 text-purple-100 leading-relaxed text-sm md:text-base">
-    <div>
-      <h4 class="text-xl text-blue-300 font-bold mb-2">Login</h4>
-      <p>Enter your <strong>username</strong> and <strong>password</strong> to log in. You can choose to stay logged in by ticking the checkbox.</p>
+  <section id="ipvanish" class="glass py-16 px-6 md:px-20 slide-up">
+    <h3 class="text-3xl font-bold mb-6 text-blue-400 border-b border-blue-600">IP Vanish Tool - User Manual</h3>
+    <img src="https://cdn.discordapp.com/attachments/1075105765842493611/1384938349537792000/image.png" alt="IP Tool Illustration" class="rounded-xl mb-6 shadow-lg max-w-full h-auto">
+    <div class="space-y-6 text-purple-100 leading-relaxed text-sm md:text-base">
+      <div>
+        <h4 class="text-xl text-blue-300 font-bold mb-2">Login</h4>
+        <p>Enter your <strong>username</strong> and <strong>password</strong> to log in. You can choose to stay logged in by ticking the checkbox.</p>
+      </div>
+      <div>
+        <h4 class="text-xl text-blue-300 font-bold mb-2">IP Lookup</h4>
+        <p>Enter an IP address and click <strong>"Analyze IP"</strong> to retrieve detailed information like country, city, ISP, and a Google Maps link.</p>
+      </div>
+      <div>
+        <h4 class="text-xl text-blue-300 font-bold mb-2">Admin Panel</h4>
+        <ul class="list-disc list-inside space-y-1">
+          <li><strong>View Users:</strong> See all registered users with email, password, country, and registration date.</li>
+          <li><strong>Edit Password:</strong> Update passwords directly in the panel.</li>
+          <li><strong>Delete User:</strong> Permanently remove accounts.</li>
+          <li><strong>Logout:</strong> Exit admin panel safely.</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xl text-blue-300 font-bold mb-2">Discord Admin Bot</h4>
+        <ul class="list-disc list-inside ml-4 space-y-1">
+          <li><code>/add_admin username password</code> – Add new admin</li>
+          <li><code>/remove_admin username</code> – Remove admin</li>
+          <li><code>/list_admins</code> – List all admins</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xl text-blue-300 font-bold mb-2">Support & Contact</h4>
+        <ul class="list-disc list-inside ml-4">
+          <li>Email: <a href="mailto:contact@52romann.at" class="underline text-blue-200">contact@52romann.at</a></li>
+          <li>Website: <a href="https://www.52romann.at" class="underline text-blue-200">www.52romann.at</a></li>
+          <li>Discord: <span class="text-blue-200">52romann#1234</span></li>
+        </ul>
+      </div>
+      <p class="mt-8 text-sm text-purple-400 italic">Thank you for choosing IP Vanish Tool!</p>
     </div>
-    <div>
-      <h4 class="text-xl text-blue-300 font-bold mb-2">IP Lookup</h4>
-      <p>Enter an IP address and click <strong>"Analyze IP"</strong> to retrieve detailed information like country, city, ISP, and a Google Maps link.</p>
-    </div>
-    <div>
-      <h4 class="text-xl text-blue-300 font-bold mb-2">Admin Panel</h4>
-      <ul class="list-disc list-inside space-y-1">
-        <li><strong>View Users:</strong> See all registered users with email, password, country, and registration date.</li>
-        <li><strong>Edit Password:</strong> Update passwords directly in the panel.</li>
-        <li><strong>Delete User:</strong> Permanently remove accounts.</li>
-        <li><strong>Logout:</strong> Exit admin panel safely.</li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="text-xl text-blue-300 font-bold mb-2">Discord Admin Bot</h4>
-      <ul class="list-disc list-inside ml-4 space-y-1">
-        <li><code>/add_admin username password</code> – Add new admin</li>
-        <li><code>/remove_admin username</code> – Remove admin</li>
-        <li><code>/list_admins</code> – List all admins</li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="text-xl text-blue-300 font-bold mb-2">Support & Contact</h4>
-      <ul class="list-disc list-inside ml-4">
-        <li>Email: <a href="mailto:contact@52romann.at" class="underline text-blue-200">contact@52romann.at</a></li>
-        <li>Website: <a href="https://www.52romann.at" class="underline text-blue-200">www.52romann.at</a></li>
-        <li>Discord: <span class="text-blue-200">52romann#1234</span></li>
-      </ul>
-    </div>
-    <p class="mt-8 text-sm text-purple-400 italic">Thank you for choosing IP Vanish Tool!</p>
-  </div>
-</section>
+  </section>
 
   
   <!-- Hero Section -->
