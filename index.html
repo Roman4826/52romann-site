@@ -342,11 +342,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 </script>
- <script>
-  window.onload = () => {
-    window.scrollTo(0, 0);
-  };
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 50); // hilft gegen mobile Browser-Sprung
+  });
 </script>
+
 
 
 </body>
