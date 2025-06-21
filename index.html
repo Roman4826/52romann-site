@@ -344,6 +344,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    history.scrollRestoration = "manual"; // verhindert automatische Scrollposition
     setTimeout(() => {
       window.scrollTo(0, 0);
     }, 50); // hilft gegen mobile Browser-Sprung
